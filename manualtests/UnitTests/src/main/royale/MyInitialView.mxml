@@ -32,6 +32,10 @@ limitations under the License.
 		.body {
 			left:10px;
 			right:10px;
+			font-family: sans-serif;
+		}
+		.royale .Label {
+			white-space: pre-wrap !important;
 		}
 	</fx:Style>
 

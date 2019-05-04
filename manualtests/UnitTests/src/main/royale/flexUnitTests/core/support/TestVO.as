@@ -16,40 +16,32 @@
 //  limitations under the License.
 //
 ////////////////////////////////////////////////////////////////////////////////
-package {
-	public class Vector extends Array{
-		
-		private static var _staticInit:Boolean;
-		
-		private static function _init():void{
-			
-			var proto:Object = {
-			
-			}
-			
-			Vector['prototype'] = Array['protoype'];
-			_staticInit = true;
-		}
-		
-		public function Vector(initialValues:Array, type:String, fixed:Boolean) {
-			if (!_staticInit) _init();
-		}
-		
-	}
-	
-	
-	/*class Vector$Int extends Vector {
-	
-	
-	}
-	
-	class Vector$Uint extends Vector {
-	
-	
-	}
-	
-	class Vector$Number extends Vector {
-	
-	
-	}*/
+package flexUnitTests.core.support
+{
+    import org.apache.royale.events.EventDispatcher;
+    
+    [Bindable]
+    public class TestVO extends EventDispatcher
+    {
+        public function TestVO(field1:String, field2:int, field3:String)
+        {
+            this.field1 = field1;
+            this.field2 = field2;
+            this.field3 = field3;
+        }
+        
+        public var field1:String = '';
+        public var field2:int = 0;
+        public var field3:String = '';
+        
+        COMPILE::SWF
+        override public function toString():String{
+            return 'TestVO ['+field1+']#'+field2+' ['+field3+']';
+        }
+    
+        COMPILE::JS
+        public function toString():String{
+            return 'TestVO ['+field1+']#'+field2+' ['+field3+']';
+        }
+    }
 }

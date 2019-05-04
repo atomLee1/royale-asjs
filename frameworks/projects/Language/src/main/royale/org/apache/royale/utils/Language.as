@@ -672,7 +672,6 @@ class VectorSupport {
     /**
      *
      * @royaleignorecoercion Function
-     * @royalesuppressvectorindexcheck
      */
     public static function vectorElementCoercion(elementType:String, synthVectorClass:Object ):Function{
         if (synthVectorClass[VectorSupport.COERCE_ELEMENT]) return synthVectorClass[VectorSupport.COERCE_ELEMENT] as Function;
