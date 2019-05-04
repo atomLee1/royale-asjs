@@ -40,11 +40,7 @@ package org.apache.royale.utils
     COMPILE::JS
     public class Language
     {
-    
-        /**
-         * @royalesuppresspublicvarwarning
-         */
-        public static var runtimeVectorSafety:Boolean = goog.DEBUG || true;
+        
         
         //--------------------------------------
         //   Static Property
@@ -794,9 +790,10 @@ class VectorSupport {
         props[Language.SYNTH_TAG_FIELD] = {
             value: inst
         };
-        
-        if (Language.runtimeVectorSafety) {
-            blend(props, getFixedLengthOverrides())
+        blend(props, getMainTypeSafetyOverrides());
+        //possible future runtime performance tuning based on compilation 'define' setting tweaks
+       /* if (Language.runtimeVectorSafety) {
+            blend(props, getMainTypeSafetyOverrides())
         } else {
             blend(props, {
                 'insertAt':{
@@ -806,7 +803,7 @@ class VectorSupport {
                     value: inst.removeAt
                 }
             })
-        }
+        }*/
         
         Object.defineProperties (array, props);
         return array;
@@ -857,7 +854,7 @@ class VectorSupport {
     }
     
     private static var _fixedLenObject:Object;
-    public static function getFixedLengthOverrides():Object{
+    public static function getMainTypeSafetyOverrides():Object{
         if (_fixedLenObject) return _fixedLenObject;
         _fixedLenObject = {
             'pop': {
