@@ -53,7 +53,7 @@
           <skipExtern>true</skipExtern>
           <skipAS>${royale.skipAS}</skipAS>
           <allowSubclassOverrides>true</allowSubclassOverrides>
-          <additionalCompilerOptions>-allow-abstract-classes;-js-default-initializers=false;-source-map=true</additionalCompilerOptions>
+          <additionalCompilerOptions>-allow-abstract-classes;-js-default-initializers=false;-js-no-complex-implicit-coercions=true;-js-no-vector-index-checks=true;-js-no-resolve-uncertain=true;-source-map=true</additionalCompilerOptions>
         </configuration>
         <!-- As a test, add asdoc generation to the compile step -->
         <executions>

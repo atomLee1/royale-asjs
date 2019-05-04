@@ -65,7 +65,7 @@
           <!--<allowSubclassOverrides>true</allowSubclassOverrides>-->
           <skipExtern>true</skipExtern>
           <skipAS>${royale.skipAS}</skipAS>
-          <additionalCompilerOptions>-js-default-initializers=false;-source-map=true</additionalCompilerOptions>
+          <additionalCompilerOptions>-js-default-initializers=false;-js-no-complex-implicit-coercions=true;-js-no-vector-index-checks=true;-js-no-resolve-uncertain=true;-source-map=true</additionalCompilerOptions>
         </configuration>
       </plugin>
       <plugin>

@@ -16,38 +16,18 @@
 //  limitations under the License.
 //
 ////////////////////////////////////////////////////////////////////////////////
-package flexUnitTests.github
+package flexUnitTests.xml
 {
-    import flexunit.framework.Assert;
-
     
-    public class GithubTesterTest
+    
+    import flexunit.framework.Assert;
+    
+    import org.apache.royale.reflection.*;
+    
+    
+    public class XMLTesterStringifyTest
     {
-		public static var isJS:Boolean;
-        [BeforeClass]
-        public static function setUpBeforeClass():void
-        {
-            var js:Boolean = false;
-            try {
-                var check:* = getDefinitionByName("flash.system.Capabilities");
-            } catch (e:Error) {
-                js = true;
-            }
-            //if this next reference to 'check' is not included, then the above try/catch code
-            // appears to be optimized away in js-release mode
-            //todo: this is inconsistent with swf, need to create simple test case for jx compiler/gcc
-            if (check == null) {
-                js = true;
-            }
-            isJS = js;
-        }
-		
-		[AfterClass]
-        public static function tearDownAfterClass():void
-        {
-        }
-	
-	
+        
         [Before]
         public function setUp():void
         {
@@ -58,16 +38,39 @@ package flexUnitTests.github
         {
         }
         
-       
-        /*
-		// TEST METHODS
-		*/
-  
-		//example, postfix the test method with JIRA issue reference:
-        /*[Test]
-        public function testJIRA_FLEX_9999():void
+        [BeforeClass]
+        public static function setUpBeforeClass():void
         {
-
+        }
+        
+        [AfterClass]
+        public static function tearDownAfterClass():void
+        {
+        }
+        
+        
+        [Test]
+        public function testPrettyPrintingSimple():void
+        {
+            XML.prettyIndent = 2;
+            XML.prettyPrinting = true;
+            var xml:XML = <xml>
+                <item/>
+            </xml>;
+            
+            Assert.assertEquals('Error in pretty Printing', xml.toXMLString(), '<xml>\n  <item/>\n</xml>')
+            XML.prettyIndent = 4;
+            Assert.assertEquals('Error in pretty Printing', xml.toXMLString(), '<xml>\n    <item/>\n</xml>')
+            XML.prettyIndent = 0;
+            Assert.assertEquals('Error in pretty Printing', xml.toXMLString(), '<xml>\n<item/>\n</xml>')
+            
+        }
+        
+        /*[Test]
+        public function testPrettyPrintingAdvanced():void{
+        
         }*/
+        
+        
     }
 }

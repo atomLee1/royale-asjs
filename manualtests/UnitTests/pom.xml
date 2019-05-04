@@ -35,7 +35,7 @@
 		<bgcolor>#ffffff</bgcolor>
 		<useBrowserHistory>--</useBrowserHistory>
 		<version_major>11</version_major>
-		<version_minor>1</version_minor>
+		<version_minor>5</version_minor>
 		<version_revision>0</version_revision>
 		<expressInstallSwf>expressInstall.swf</expressInstallSwf>
 		<application>${project.artifactId}</application>
@@ -56,7 +56,7 @@
 					<mainClass>${project.artifactId}.mxml</mainClass>
                     <removeCirculars>true</removeCirculars>
 					<debug>true</debug>
-					<additionalCompilerOptions>-js-default-initializers;-keep-as3-metadata+=Test,BeforeClass,AfterClass,Before,After,TestVariance,Event,Bindable,TestMeta;-keep-code-with-metadata=Test,BeforeClass,AfterClass,Before,After,TestVariance,TestMeta</additionalCompilerOptions>
+					<additionalCompilerOptions>-swf-version=18;-keep-as3-metadata+=Test,BeforeClass,AfterClass,Before,After,TestVariance,Event,Bindable,TestMeta</additionalCompilerOptions>
 					<outputDirectory>${basedir}/target/bin-debug</outputDirectory>
 					<flashOutputFileName>${project.artifactId}.swf</flashOutputFileName>
 				</configuration>
@@ -71,7 +71,7 @@
 							<targets>JSRoyale</targets>
 							<mainClass>${project.artifactId}.mxml</mainClass>
 							<debug>false</debug>
-							<additionalCompilerOptions>-js-default-initializers;-keep-as3-metadata+=Test,BeforeClass,AfterClass,Before,After,TestVariance,Event,Bindable,TestMeta;-keep-code-with-metadata=Test,BeforeClass,AfterClass,Before,After,TestVariance,TestMeta</additionalCompilerOptions>
+							<additionalCompilerOptions>-js-default-initializers;-source-map=true;-keep-as3-metadata+=Test,BeforeClass,AfterClass,Before,After,TestVariance,Event,Bindable,TestMeta;-keep-code-with-metadata=Test,BeforeClass,AfterClass,Before,After,TestVariance,TestMeta</additionalCompilerOptions>
 							<outputDirectory>${basedir}/target</outputDirectory>
 						</configuration>
 					</execution>
@@ -162,6 +162,20 @@
 		<dependency>
 			<groupId>org.apache.royale.framework</groupId>
 			<artifactId>Reflection</artifactId>
+			<version>0.9.6-SNAPSHOT</version>
+			<type>swc</type>
+			<classifier>js</classifier>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.royale.framework</groupId>
+			<artifactId>Network</artifactId>
+			<version>0.9.6-SNAPSHOT</version>
+			<type>swc</type>
+			<classifier>swf</classifier>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.royale.framework</groupId>
+			<artifactId>Network</artifactId>
 			<version>0.9.6-SNAPSHOT</version>
 			<type>swc</type>
 			<classifier>js</classifier>

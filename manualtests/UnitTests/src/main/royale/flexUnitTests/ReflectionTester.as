@@ -18,10 +18,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 package flexUnitTests
 {
-	import flexUnitTests.reflection.*;
-	
+    import flexUnitTests.reflection.*;
+    
     [Suite]
     [RunWith("org.flexunit.runners.Suite")]
+    /**
+     * @royalesuppresspublicvarwarning
+     */
     public class ReflectionTester
     {
         public function ReflectionTester()
@@ -34,8 +37,8 @@ package flexUnitTests
         public var reflectionTesterTest:ReflectionTesterTest;
         
         public var reflectionTesterAliasTest:ReflectionTesterTestAlias;
-	
-	
-		public var reflectionTesterDynamicTest:ReflectionTesterTestDynamic;
+        
+        
+        public var reflectionTesterDynamicTest:ReflectionTesterTestDynamic;
     }
 }

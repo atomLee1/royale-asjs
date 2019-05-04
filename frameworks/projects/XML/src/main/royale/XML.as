@@ -80,26 +80,26 @@ package
 
 		/**
 		 * [static] Determines whether XML comments are ignored when XML objects parse the source XML data.
-		 *  
+		 *
 		 */
 		static public var ignoreComments:Boolean = true;
 		
 		/**
 		 * [static] Determines whether XML processing instructions are ignored when XML objects parse the source XML data.
-		 *  
+		 *
 		 */
 		static public var ignoreProcessingInstructions:Boolean = true;
 		
 		/**
 		 * [static] Determines whether white space characters at the beginning and end of text nodes are ignored during parsing.
-		 *  
+		 *
 		 */
 		static public var ignoreWhitespace:Boolean = true;
 		
 		static private var _prettyIndent:int = 2;
 		/**
 		 * [static] Determines the amount of indentation applied by the toString() and toXMLString() methods when the XML.prettyPrinting property is set to true.
-		 * 
+		 *
 		 */
 		static public function set prettyIndent(value:int):void
 		{
@@ -121,7 +121,7 @@ package
 		
 		/**
 		 * [static] Determines whether the toString() and toXMLString() methods normalize white space characters between some tags.
-		 * 
+		 *
 		 */
 		static public var prettyPrinting:Boolean = true;
 		
@@ -316,8 +316,8 @@ package
 
 		/**
 		 * [static] Returns an object with the following properties set to the default values: ignoreComments, ignoreProcessingInstructions, ignoreWhitespace, prettyIndent, and prettyPrinting.
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		static public function defaultSettings():Object
 		{
@@ -333,7 +333,7 @@ package
 		/**
 		 * [static] Sets values for the following XML properties: ignoreComments, ignoreProcessingInstructions, ignoreWhitespace, prettyIndent, and prettyPrinting.
 		 * @param rest
-		 * 
+		 *
 		 */
 		static public function setSettings(value:Object):void
 		{
@@ -349,9 +349,9 @@ package
 		
 		/**
 		 * [static] Retrieves the following properties: ignoreComments, ignoreProcessingInstructions, ignoreWhitespace, prettyIndent, and prettyPrinting.
-		 * 
-		 * @return 
-		 * 
+		 *
+		 * @return
+		 *
 		 */
 		static public function settings():Object
 		{
@@ -504,10 +504,10 @@ package
 
 		/**
 		 * @private
-		 * 
+		 *
 		 * Similar to appendChild, but accepts all XML types (text, comment, processing-instruction, attribute, or element)
 		 *
-		 * 	
+		 *
 		 */
 		public function addChild(child:XML):void
 		{
@@ -527,7 +527,7 @@ package
             {
                 // don't add child
             }
-			else				
+			else
 				getChildren().push(child);
 			
 		}
@@ -552,8 +552,8 @@ package
 		 * Adds a namespace to the set of in-scope namespaces for the XML object.
 		 *
 		 * @param ns
-		 * @return 
-		 * 	
+		 * @return
+		 *
 		 */
 		public function addNamespace(ns:Namespace):XML
 		{
@@ -612,8 +612,8 @@ package
 		 * Appends the given child to the end of the XML object's properties.
 		 *
 		 * @param child
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function appendChild(child:*):XML
 		{
@@ -667,8 +667,8 @@ package
 		 * Returns the XML value of the attribute that has the name matching the attributeName parameter.
 		 *
 		 * @param attributeName
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function attribute(attributeName:*):XMLList
 		{
@@ -692,8 +692,8 @@ package
 		/**
 		 * Returns a list of attribute values for the given XML object.
 		 *
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function attributes():XMLList
 		{
@@ -711,13 +711,13 @@ package
 		 * Lists the children of an XML object.
 		 *
 		 * @param propertyName
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function child(propertyName:Object):XMLList
 		{
 			/*
-			 * 
+			 *
 			When the [[Get]] method of an XML object x is called with property name P, the following steps are taken:
 			1. If ToString(ToUint32(P)) == P
 			  a. Let list = ToXMLList(x)
@@ -772,8 +772,8 @@ package
 		/**
 		 * Identifies the zero-indexed position of this XML object within the context of its parent.
 		 *
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function childIndex():int
 		{
@@ -786,8 +786,8 @@ package
 		/**
 		 * Lists the children of the XML object in the sequence in which they appear.
 		 *
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function children():XMLList
 		{
@@ -804,8 +804,8 @@ package
 		/**
 		 * Lists the properties of the XML object that contain XML comments.
 		 *
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function comments():XMLList
 		{
@@ -845,8 +845,8 @@ package
 		 * Compares the XML object against the given value parameter.
 		 *
 		 * @param value
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function contains(value:*):Boolean
 		{
@@ -857,9 +857,9 @@ package
 		
 		/**
 		 * Returns a copy of the given XML object.
-		 * 
-		 * @return 
-		 * 
+		 *
+		 * @return
+		 *
 		 */
 		public function copy():XML
 		{
@@ -911,10 +911,10 @@ package
 		
 		/**
 		 * Returns all descendants (children, grandchildren, great-grandchildren, and so on) of the XML object that have the given name parameter.
-		 * 
+		 *
 		 * @param name
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function descendants(name:Object = "*"):XMLList
 		{
@@ -957,17 +957,17 @@ package
 						list.append(_children[i]);
 
 					list.concat(_children[i].descendants(name));
-				} 
+				}
 			}
 			return list;
 		}
 		
 		/**
 		 * Lists the elements of an XML object. (handles E4X dot notation)
-		 * 
+		 *
 		 * @param name
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function elements(name:Object = "*"):XMLList
 		{
@@ -1172,9 +1172,9 @@ package
 		}
 		/**
 		 * Checks to see whether the XML object contains complex content.
-		 * 
-		 * @return 
-		 * 
+		 *
+		 * @return
+		 *
 		 */
 		public function hasComplexContent():Boolean
 		{
@@ -1241,12 +1241,12 @@ package
 			}
 			return false;
 		}
-				
+		
 		/**
 		 * Checks to see whether the XML object contains simple content.
-		 * 
-		 * @return 
-		 * 
+		 *
+		 * @return
+		 *
 		 */
 		public function hasSimpleContent():Boolean
 		{
@@ -1271,9 +1271,9 @@ package
 		
 		/**
 		 * Lists the namespaces for the XML object, based on the object's parent.
-		 * 
-		 * @return 
-		 * 
+		 *
+		 * @return
+		 *
 		 */
 		public function inScopeNamespaces():Array
 		{
@@ -1313,11 +1313,11 @@ package
 		}
 		/**
 		 * Inserts the given child2 parameter after the child1 parameter in this XML object and returns the resulting object.
-		 * 
+		 *
 		 * @param child1
 		 * @param child2
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function insertChildAfter(child1:XML, child2:XML):XML
 		{
@@ -1349,11 +1349,11 @@ package
 		
 		/**
 		 * Inserts the given child2 parameter before the child1 parameter in this XML object and returns the resulting object.
-		 * 
+		 *
 		 * @param child1
 		 * @param child2
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function insertChildBefore(child1:XML, child2:XML):XML
 		{
@@ -1368,7 +1368,7 @@ package
 				i. If x[i] is the same object as child1
 				1. Call the [[Insert]] method of x with arguments ToString(i) and child2
 				2. Return x
-				4. Return			
+				4. Return
 			*/
 			if(_nodeKind == "text" || _nodeKind == "comment" || _nodeKind == "processing-instruction" || _nodeKind == "attribute")
 				return null;
@@ -1388,9 +1388,9 @@ package
 		
 		/**
 		 * For XML objects, this method always returns the integer 1.
-		 * 
-		 * @return 
-		 * 
+		 *
+		 * @return
+		 *
 		 */
 		public function length():int
 		{
@@ -1399,9 +1399,9 @@ package
 		
 		/**
 		 * Gives the local name portion of the qualified name of the XML object.
-		 * 
-		 * @return 
-		 * 
+		 *
+		 * @return
+		 *
 		 */
 		public function localName():String
 		{
@@ -1412,9 +1412,9 @@ package
 		
 		/**
 		 * Gives the qualified name for the XML object.
-		 * 
-		 * @return 
-		 * 
+		 *
+		 * @return
+		 *
 		 */
 		public function name():QName
 		{
@@ -1425,10 +1425,10 @@ package
 		
 		/**
 		 * If no parameter is provided, gives the namespace associated with the qualified name of this XML object.
-		 * 
+		 *
 		 * @param prefix
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function namespace(prefix:String = null):*
 		{
@@ -1470,9 +1470,9 @@ package
 		
 		/**
 		 * Lists namespace declarations associated with the XML object in the context of its parent.
-		 * 
-		 * @return 
-		 * 
+		 *
+		 * @return
+		 *
 		 */
 		public function namespaceDeclarations():Array
 		{
@@ -1530,8 +1530,8 @@ package
 		private var _nodeKind:String = "element";
 		/**
 		 * Specifies the type of node: text, comment, processing-instruction, attribute, or element.
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function nodeKind():String
 		{
@@ -1540,9 +1540,9 @@ package
 		
 		/**
 		 * For the XML object and all descendant XML objects, merges adjacent text nodes and eliminates empty text nodes.
-		 * 
-		 * @return 
-		 * 
+		 *
+		 * @return
+		 *
 		 */
 		public function normalize():XML
 		{
@@ -1577,9 +1577,9 @@ package
 		
 		/**
 		 * Returns the parent of the XML object.
-		 * 
-		 * @return 
-		 * 
+		 *
+		 * @return
+		 *
 		 */
 		public function parent():*
 		{
@@ -1604,8 +1604,8 @@ package
 		/**
 		 * Inserts the provided child object into the XML element before any existing XML properties for that element.
 		 * @param value
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function prependChild(child:XML):XML
 		{
@@ -1639,10 +1639,10 @@ package
 		
 		/**
 		 * If a name parameter is provided, lists all the children of the XML object that contain processing instructions with that name.
-		 * 
+		 *
 		 * @param name
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function processingInstructions(name:String = "*"):XMLList
 		{
@@ -1660,10 +1660,10 @@ package
 		
 		/**
 		 * Removes the given chid for this object and returns the removed child.
-		 * 
+		 *
 		 * @param child
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function removeChild(child:XML):Boolean
 		{
@@ -1777,10 +1777,10 @@ package
 
 		/**
 		 * Removes the given namespace for this object and all descendants.
-		 * 
+		 *
 		 * @param ns
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function removeNamespace(ns:*):XML
 		{
@@ -1842,11 +1842,11 @@ package
 		
 		/**
 		 * Replaces the properties specified by the propertyName parameter with the given value parameter.
-		 * 
+		 *
 		 * @param propertyName
 		 * @param value
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function replace(propertyName:Object, value:*):*
 		{
@@ -1866,7 +1866,7 @@ package
 				    ii. Let i = k
 				8. If i == undefined, return x
 				9. Call the [[Replace]] method of x with arguments ToString(i) and c
-				10. Return x			
+				10. Return x
 			*/
 		
 			if(_nodeKind == "text" || _nodeKind == "comment" || _nodeKind == "processing-instruction" || _nodeKind ==  "attribute")
@@ -2027,16 +2027,16 @@ package
 		/**
 		 * Replaces the child properties of the XML object with the specified name with the specified XML or XMLList.
 		 * This is primarily used to support dot notation assignment of XML.
-		 * 
+		 *
 		 * @param value
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function setChild(elementName:*, elements:Object):Object
 		{
 			
 			/*
-			 * 
+			 *
 			1. If ToString(ToUint32(P)) == P, throw a TypeError exception NOTE this operation is reserved for future versions of E4X.
 			2. If x.[[Class]] ∈ {"text", "comment", "processing-instruction", "attribute"}, return
 			3. If (Type(V) ∉ {XML, XMLList}) or (V.[[Class]] ∈ {"text", "attribute"})
@@ -2180,10 +2180,10 @@ package
 
 		/**
 		 * Replaces the child properties of the XML object with the specified set of XML properties, provided in the value parameter.
-		 * 
+		 *
 		 * @param value
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		public function setChildren(value:Object):XML
 		{
@@ -2236,9 +2236,9 @@ package
 		
 		/**
 		 * Changes the local name of the XML object to the given name parameter.
-		 * 
+		 *
 		 * @param name
-		 * 
+		 *
 		 */
 		public function setLocalName(name:String):void
 		{
@@ -2251,9 +2251,9 @@ package
 		
 		/**
 		 * Sets the name of the XML object to the given qualified name or attribute name.
-		 * 
+		 *
 		 * @param name
-		 * 
+		 *
 		 */
 		public function setName(name:*):void
 		{
@@ -2268,9 +2268,9 @@ package
 		
 		/**
 		 * Sets the namespace associated with the XML object.
-		 * 
+		 *
 		 * @param ns
-		 * 
+		 *
 		 */
 		public function setNamespace(ns:Object):void
 		{
@@ -2295,7 +2295,7 @@ package
 
 		/**
 		 * @private
-		 * 
+		 *
 		 */
 		public function setNodeKind(value:String):void
 		{
@@ -2321,7 +2321,7 @@ package
 
 		/**
 		 * @private
-		 * 
+		 *
 		 * Allows XMLList to get the targetObject of its targetObject and not error when it gets the XML
 		 */
 		public function get targetObject():*
@@ -2331,9 +2331,9 @@ package
 		
 		/**
 		 * Returns an XMLList object of all XML properties of the XML object that represent XML text nodes.
-		 * 
-		 * @return 
-		 * 
+		 *
+		 * @return
+		 *
 		 */
 		public function text():XMLList
 		{
@@ -2351,10 +2351,10 @@ package
 		
 		/**
 		 * Provides an overridable method for customizing the JSON encoding of values in an XML object.
-		 * 
+		 *
 		 * @param k
-		 * @return 
-		 * 
+		 * @return
+		 *
 		 */
 		 /*
 		override public function toJSON(k:String):String
@@ -2365,9 +2365,9 @@ package
 
 		/**
 		 * Returns a string representation of the XML object.
-		 * 
-		 * @return 
-		 * 
+		 *
+		 * @return
+		 *
 		 */
 		public function toString():String
 		{
@@ -2458,9 +2458,9 @@ package
 		
 		/**
 		 * Returns a string representation of the XML object.
-		 * 
-		 * @return 
-		 * 
+		 *
+		 * @return
+		 *
 		 */
 		public function toXMLString(indentLevel:int=0,ancestors:Array=null):String
 		{
@@ -2541,7 +2541,7 @@ package
 				  a. Let s be the result of concatenating s, namespace.prefix and the string ":"
 				26. Let s be the result of concatenating s, x.[[Name]].localName and the string ">"
 				27. Return s
-				NOTE Implementations may also preserve insignificant whitespace (e.g., inside and between element tags) and attribute quoting conventions in ToXMLString().			
+				NOTE Implementations may also preserve insignificant whitespace (e.g., inside and between element tags) and attribute quoting conventions in ToXMLString().
 			*/
 			var i:int;
 			var len:int;
@@ -2605,9 +2605,9 @@ package
 				ns.prefix = "";
 				declarations.push(ns);
 			}
-			if(XML.prettyPrinting)
+			if(XML.prettyPrinting && indentLevel > 0)
 			{
-				strArr.push(new Array(indentLevel).join(' '));
+				strArr.push(new Array(indentLevel + 1).join(_indentStr));
 			}
 			strArr.push("<");
 			if(ns.prefix)
@@ -2660,7 +2660,7 @@ package
 			var indentChildren:Boolean = len > 1 || (len == 1 && _children[0].nodeKind() != "text");
 			var nextIndentLevel:int;
 			if(XML.prettyPrinting && indentChildren)
-				nextIndentLevel = indentLevel + prettyIndent;
+				nextIndentLevel = indentLevel + 1;
 			else
 				nextIndentLevel = 0;
 			for(i=0;i<len;i++)
@@ -2673,7 +2673,8 @@ package
 			if(XML.prettyPrinting && indentChildren)
 			{
 				strArr.push("\n");
-				strArr.push(new Array(indentLevel + 1).join(' '));
+				if (indentLevel > 0)
+					strArr.push(new Array(indentLevel + 1).join(_indentStr));
 			}
 			strArr.push("</");
 			if(ns.prefix)
@@ -2689,9 +2690,9 @@ package
 		
 		/**
 		 * Returns the XML object.
-		 * 
-		 * @return 
-		 * 
+		 *
+		 * @return
+		 *
 		 */
 		override public function valueOf():*
 		{
@@ -2709,7 +2710,7 @@ package
 		///
 		///
 		/// METHODS to allow XML to behave as if it's a string or number
-		/// 
+		///
 		///
 		////////////////////////////////////////////////////////////////
 		

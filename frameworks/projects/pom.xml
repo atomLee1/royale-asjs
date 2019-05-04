@@ -85,7 +85,7 @@
         <configuration>
           <!-- We don't want dependencies to be linked into the resulting libraries -->
           <forceSwcExternalLibraryPath>true</forceSwcExternalLibraryPath>
-          <additionalCompilerOptions>-js-default-initializers=false;-source-map=true</additionalCompilerOptions>
+          <additionalCompilerOptions>-js-default-initializers=false;-source-map=true;-js-no-complex-implicit-coercions=true;-js-no-vector-index-checks=true;-js-no-resolve-uncertain=true</additionalCompilerOptions>
         </configuration>
       </plugin>
     </plugins>

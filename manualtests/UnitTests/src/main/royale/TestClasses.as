@@ -27,6 +27,7 @@ package
 		
 		public static function get testClasses():Array {
 			return [
+						LanguageTester,
 						CoreTester,
 						ReflectionTester,
 						ObservedBugsTester,
