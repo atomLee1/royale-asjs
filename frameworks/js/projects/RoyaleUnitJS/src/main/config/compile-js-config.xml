@@ -87,7 +87,7 @@
 
     <js-default-initializers>false</js-default-initializers>
 
-    <js-no-complex-implicit-coercions>true</js-no-complex-implicit-coercions>
-    <js-no-resolve-uncertain>true</js-no-resolve-uncertain>
-    <js-no-vector-index-checks>true</js-no-vector-index-checks>
+    <js-complex-implicit-coercions>false</js-complex-implicit-coercions>
+    <js-resolve-uncertain>false</js-resolve-uncertain>
+    <js-vector-index-checks>false</js-vector-index-checks>
 </royale-config>
